@@ -1,0 +1,17 @@
+
+
+<table id="books">
+  <tr>
+    <th>Book Title</th>
+    <th>Rating</th>
+    <th>Comments</th>
+  </tr>
+  <% for book in @books do %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.rating %></td>
+      <td><%= book.comment %></td>      
+    </tr>
+  <% end %>
+</table>
+

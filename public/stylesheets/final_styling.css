@@ -1,0 +1,28 @@
+
+body {
+  background: #fff;
+}
+
+h1 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+table{
+  width: 100%;
+}
+
+th{
+  background: #8ac4ff;     
+}
+
+.even td{
+  background: white;
+}
+
+.odd td{
+  background: #e5e5e5;
+}

@@ -1,0 +1,20 @@
+
+<h1>Books that JD may or may not have read (all of)</h1>
+
+<table class="books">
+  <tr>
+    <th>Book Title</th>
+    <th>Rating</th>
+    <th>Comments</th>
+  </tr>
+  <% @books.each do |book| %>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td><%=link_to((book.title), book_path(book)) %></td>
+      <td><%= book.rating %></td>
+      <td><%= book.note %></td>      
+    </tr>
+  <% end %> 
+
+
+</table>
+

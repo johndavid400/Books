@@ -1,0 +1,20 @@
+
+<h1> <%= @book.title.upcase %></h1>
+
+<table class="comments">
+  <tr>
+    <th>Author</th>
+    <th>Comment</th>
+  </tr>
+  <tr>
+    <% @book.comments.each do |comment| %>
+      <td><%= comment.author.upcase %> says:</td> 
+      <td>"<%= comment.text %>"</td>
+    <% end %>
+  </tr>
+</table>
+
+</p>
+
+<h4>There are <%= @book.comments.count %> comments on this book.</h4>
+

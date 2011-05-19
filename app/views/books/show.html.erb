@@ -1,17 +1,17 @@
-
 <h1> <%= @book.title.upcase %></h1>
-
 <table class="comments">
   <tr>
-    <th>Author</th>
+    <th>Name</th>
     <th>Comment</th>
   </tr>
-  <tr>
+
     <% @book.comments.each do |comment| %>
-      <td><%= comment.author.upcase %> says:</td> 
-      <td>"<%= comment.text %>"</td>
+      <tr>
+        <td><%= comment.author.upcase %> says:</td> 
+        <td>"<%= comment.text %>"</td>
+      </tr>
     <% end %>
-  </tr>
+
 </table>
 
 </p>
@@ -20,19 +20,13 @@
 
 </p>
 
-<h3>Post your Comment</h3>
-<%= form_for([@book, Comment.new]) do |form| %>
-  <p><%= form.label :author %></p>
-  <p><%= form.text_field :author %></p>
-  <p><%= form.label :text %></p>
-  <p><%= form.text_area :text %></p>
-
-  <%= form.submit 'Save' %>
-<% end %>
-
-
-
-
-
-
-
+<div class="post_comment">
+  <h3>Post your Comment</h3>
+  <%= form_for([@book, Comment.new]) do |form| %>
+    <p><%= form.label :name %></p>
+    <p><%= form.text_field :author %></p>
+    <p><%= form.label :comment %></p>
+    <p><%= form.text_area :text %></p>
+    <%= form.submit 'Save' %>
+  <% end %>
+</div>

@@ -19,10 +19,10 @@ th{
   background: #8ac4ff;     
 }
 
-.even td{
+.odd td{
   background: white;
 }
 
-.odd td{
+.even td{
   background: #e5e5e5;
 }

@@ -1,6 +1,7 @@
 
 body {
-  background: #fff;
+  background: #5da0e3;
+
 }
 
 h1 {
@@ -16,7 +17,7 @@ table{
 }
 
 th{
-  background: #8ac4ff;     
+  background: #b1e37f;     
 }
 
 .odd td{
@@ -26,3 +27,14 @@ th{
 .even td{
   background: #e5e5e5;
 }
+
+#new_book{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search_for_book{
+}
+
+

@@ -6,7 +6,7 @@
   </tr>
 
     <% @book.comments.each do |comment| %>
-      <tr>
+      <tr class="<%= cycle("odd", "even") %>">
         <td><%= comment.author.upcase %> says:</td> 
         <td>"<%= comment.text %>"</td>
       </tr>
@@ -23,9 +23,9 @@
 <div class="post_comment">
   <h3>Post your Comment</h3>
   <%= form_for([@book, Comment.new]) do |form| %>
-    <p><%= form.label :name %></p>
+    <p><%= form.label :author, "Name" %></p>
     <p><%= form.text_field :author %></p>
-    <p><%= form.label :comment %></p>
+    <p><%= form.label :text, "Text" %></p>
     <p><%= form.text_area :text %></p>
     <%= form.submit 'Save' %>
   <% end %>

@@ -20,10 +20,14 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book.destroy
-    flash[:notice] = "Book deleted"
+    @book = Book.find(params[:id]) 
+    if @book.destroy
+       flash[:notice] = "Book deleted"
+    else   
+      flash[:error] = "Delete error"
+    end
     redirect_to books_path
-  end  
+  end
 
   def search
     @book = Book.all

@@ -2,7 +2,7 @@
 <h1>Book list</h1>
 
   <div id="search_for_book">
-    <%= form_tag(books_path, :method => "get") do %>
+    <%= form_tag books_path, :method => :get do %>
       <%= label_tag(:q, "Search for:") %>
       <%= text_field_tag(:q) %>
       <%= submit_tag("Search") %>

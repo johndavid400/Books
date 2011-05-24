@@ -4,7 +4,7 @@ class Book < ActiveRecord::Base
 
   def self.search(search)
     search_condition = "%" + search + "%"
-    find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
+    results = find(:all, :conditions => ['title LIKE ?', search_condition])
   end
 
 end

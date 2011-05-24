@@ -3,4 +3,9 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.7'
 gem 'sqlite3'
 
-gem 'will_paginate'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+

@@ -1,13 +1,17 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
     @book = Book.new
+    if params[:q] && !Book.search(params[:q]).empty?
+      @books = Book.search(params[:q])
+    else
+      @books = Book.all
+    end
   end
 
   def show
-    @book = Book.find params[:id]    
-  end 
+    @book = Book.find params[:id]
+  end
 
   def create
     @book = Book.new(params[:book])
@@ -37,10 +41,6 @@ class BooksController < ApplicationController
       flash[:error] = "Delete error"
     end
     redirect_to books_path
-  end
-
-  def search
-    @update = Book.search params[:search]
   end
 
 end

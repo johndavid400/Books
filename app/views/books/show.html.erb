@@ -1,4 +1,8 @@
 <h1> <%= @book.title.upcase %></h1>
+<p>
+<h2> <%= @book.note.upcase %> 
+<p>
+
 <table class="comments">
   <tr>
     <th>Name</th>
@@ -14,13 +18,13 @@
 
 </table>
 
-</p>
+<p>
 
 <h4>There are <%= @book.comments.count %> comments on this book.</h4>
 
-</p>
+<p>
 
-<div class="post_comment">
+<div id="post_comment">
   <h3>Post your Comment</h3>
   <%= form_for([@book, Comment.new]) do |form| %>
     <p><%= form.label :author, "Name" %></p>
@@ -30,3 +34,4 @@
     <%= form.submit 'Save' %>
   <% end %>
 </div>
+

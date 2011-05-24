@@ -8,6 +8,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 h4 {
   text-align: center;
 }
@@ -34,7 +38,14 @@ th{
   margin-right: auto;
 }
 
+#post_comment{
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #search_for_book{
+
 }
 
 

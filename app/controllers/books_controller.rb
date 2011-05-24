@@ -19,6 +19,16 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  def update
+    @book = Book.find(params[:id])
+    if @book.update_attributes(params[:book])
+      flash[:notice] = "Updated successfully"
+    else
+      flash[:error] = "Update failed"
+    end
+    redirect_to books_path
+  end
+
   def destroy
     @book = Book.find(params[:id]) 
     if @book.destroy
@@ -30,7 +40,7 @@ class BooksController < ApplicationController
   end
 
   def search
-    @book = Book.all
+    @update = Book.search params[:search]
   end
 
 end

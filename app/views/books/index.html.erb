@@ -14,15 +14,17 @@
 <table class="books">
 
   <tr>
+    <th>ID</th>
     <th>Book Title</th>
     <th>Rating</th>
     <th>Comments</th>
-    <th width="75px">Actions</th>
+    <th width="75px">Delete</th>
   </tr>
 
   <% @books.each do |book| %>
     <tr class="<%= cycle("odd", "even") %>">
-      <td><%=link_to((book.title), book_path(book)) %></td>
+      <td><%= book.id %>
+      <td><%= link_to((book.title), book_path(book)) %></td>
       <td><%= book.rating %></td>
       <td><%= book.note %></td>      
       <td><%= button_to "Delete", book, :method => :delete, :confirm => "Press OK to Delete book from list." %></td>
@@ -36,7 +38,7 @@
     <h3>Add new book to library</h3>
     <%= form_for(@book) do |form| %>
       <p>
-      <%= form.label :title, "Book Title" %>
+      <%= form.label :title, "Title" %>
       <%= form.text_field :title %>
       </p><p>
       <%= form.label :rating, "Rating" %>

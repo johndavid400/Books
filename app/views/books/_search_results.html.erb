@@ -1,0 +1,6 @@
+<ul>
+  <% @books.each do |book| %>
+    <li><%= link_to book.title, :action => 'show', :id => book.id  %></li>
+  <% end %>
+</ul>
+

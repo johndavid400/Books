@@ -19,11 +19,9 @@ ActiveRecord::Schema.define(:version => 20110519164557) do
   end
 
   create_table "comments", :force => true do |t|
-    t.text     "text"
-    t.string   "author"
-    t.integer  "book_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text    "text"
+    t.string  "author"
+    t.integer "book_id"
   end
 
 end

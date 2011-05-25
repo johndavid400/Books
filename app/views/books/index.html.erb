@@ -14,11 +14,11 @@
 <table class="books">
 
   <tr>
-    <th>ID</th>
+    <th width="25px">ID</th>
     <th>Book Title</th>
-    <th>Rating</th>
+    <th width="25px">Rating</th>
     <th>Comments</th>
-    <th width="75px">Delete</th>
+    <th width="50px">Delete</th>
   </tr>
 
   <% @books.each do |book| %>
@@ -32,6 +32,10 @@
   <% end %> 
 
 </table>
+
+  <p>
+
+  <h4>There are <%= @books.count %> books in the library </h4>
 
 
   <div id="new_book">
@@ -50,9 +54,6 @@
       <%= form.submit 'Save' %>
     <% end %>
   </div>
-
-
-
 
 
 

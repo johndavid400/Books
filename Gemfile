@@ -6,6 +6,8 @@ gem 'sqlite3'
 gem 'forgery'
 gem 'faker'
 
+gem 'ajaxful_rating'
+
 group :development, :test do
   gem 'rspec-rails'
 end

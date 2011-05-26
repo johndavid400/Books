@@ -18,15 +18,17 @@
     <th>Book Title</th>
     <th width="25px">Rating</th>
     <th>Comments</th>
+    <th width="50px">Edit</th>
     <th width="50px">Delete</th>
   </tr>
 
   <% @books.each do |book| %>
     <tr class="<%= cycle("odd", "even") %>">
-      <td><%= book.id %>
+      <td><%= book.id %></td>
       <td><%= link_to((book.title), book_path(book)) %></td>
       <td><%= book.rating %></td>
       <td><%= book.note %></td>      
+      <td><%= button_to "Edit", edit_book_path(book), :method => :get %></td>
       <td><%= button_to "Delete", book, :method => :delete, :confirm => "Press OK to Delete book from list." %></td>
     </tr>
   <% end %> 

@@ -1,0 +1,29 @@
+
+
+<%= @book.title %>
+<p>
+<%= @book.rating %>
+<p>
+<%= @book.note %>
+<p>
+
+<div id="edit_book">
+  <h3>Edit book attributes</h3>
+  <%= form_for(@book) do |form| %>
+    <p>
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title %>
+    <p>
+    <%= form.label :rating, "Rating" %>
+    <%= form.text_field :rating %>
+    <p>
+    <%= form.label :note, "Author" %>
+    <%= form.text_field :note %>
+    <p>
+    <%= form.submit 'Save' %>
+  <% end %>
+</div>
+
+
+
+

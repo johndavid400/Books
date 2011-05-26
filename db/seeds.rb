@@ -6,9 +6,11 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-  15.times{Book.create(:title => Faker::Company.catch_phrase, :note => Faker::Lorem.sentence)}
-  
-  array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-  array.each do |seed|
+#  Create 10 fake book references into the database
+  10.times{Book.create(:title => Faker::Company.catch_phrase, :note => Faker::Lorem.sentence)}
+
+#  Also create 5 fake comments for each book reference  
+  #range = (1..10)
+  (1..10).each do |seed|
   5.times{Comment.create(:book_id => seed, :author => Faker::Name.first_name, :text => Faker::Lorem.sentences)}
   end

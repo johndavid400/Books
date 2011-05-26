@@ -11,4 +11,5 @@ class Book < ActiveRecord::Base
     results = find(:all, :conditions => ['title LIKE ?', search_condition])
   end
 
+
 end

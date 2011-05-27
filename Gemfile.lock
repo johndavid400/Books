@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.7)
     ajaxful_rating (2.2.8.2)
     arel (2.0.9)
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -90,6 +91,7 @@ PLATFORMS
 
 DEPENDENCIES
   ajaxful_rating
+  bcrypt-ruby
   faker
   forgery
   rails (= 3.0.7)

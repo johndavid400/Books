@@ -1,0 +1,19 @@
+<div class="new_user">
+
+  <table class="users_table">
+
+    <tr>  
+      <th>User name</th>
+      <th>Email address</th>
+    </tr>
+
+    <%= @users.all.each do |u| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= u.email %> </td>
+        <td><%= u.id %></td>
+      </tr>
+    <% end  %>
+
+  </table>
+
+</div>

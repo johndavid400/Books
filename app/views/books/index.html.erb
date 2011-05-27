@@ -9,7 +9,11 @@
     <% end %>
   </div>
 
-  <p></p>
+  <p>
+
+  <%= button_to "Create new user", "users#new" %>
+
+  </p>
 
 <table class="books">
 
@@ -38,7 +42,6 @@
   <p>
 
   <h4>There are <%= @books.count %> books in the library </h4>
-
 
   <div id="new_book">
     <h3>Add new book to library</h3>

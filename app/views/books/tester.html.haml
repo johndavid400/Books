@@ -1,0 +1,40 @@
+%h1 Book list
+#search_for_book
+  = form_tag books_path, :method => :get do
+    = label_tag(:q, "Search for:")
+    = text_field_tag(:q)
+    = submit_tag("Search")
+%p
+  = button_to "Create new user", "users#new"
+%table.books
+  %tr
+    %th{:width => "25px"} ID
+    %th Book Title
+    %th{:width => "25px"} Rating
+    %th Comments
+    %th{:width => "50px"} Edit
+    %th{:width => "50px"} Delete
+  - @books.each do |book|
+    %tr{:class => cycle("odd", "even")}
+      %td= book.id
+      %td= link_to((book.title), book_path(book))
+      %td= book.rating
+      %td= book.note
+      %td= button_to "Edit", edit_book_path(book), :method => :get
+      %td= button_to "Delete", book, :method => :delete, :confirm => "Press OK to Delete book from list."
+%p
+  %h4
+    There are #{@books.count} books in the library
+  #new_book
+    %h3 Add new book to library
+    = form_for(@book) do |form|
+      %p
+        = form.label :title, "Title"
+        = form.text_field :title
+      %p
+        = form.label :rating, "Rating"
+        = form.text_field :rating
+      %p
+        = form.label :note, "Author"
+        = form.text_field :note
+      = form.submit 'Save'

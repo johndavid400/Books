@@ -1,22 +1,21 @@
+<h3> You are using the current web browser </h3>
+<p>
+<%= request.env['HTTP_USER_AGENT'] %>
+<p>
+
 
 <h1>Book list</h1>
-
-  <div id="search_for_book">
-    <%= form_tag books_path, :method => :get do %>
-      <%= label_tag(:q, "Search for:") %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag("Search") %>
-    <% end %>
-  </div>
-
-  <p>
-
-  <%= button_to "Create new user", "users#new" %>
-
-  </p>
-
+<div id="search_for_book">
+  <%= form_tag books_path, :method => :get do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+<p>
+<%= button_to "Create new user", "users#new" %>
+</p>
 <table class="books">
-
   <tr>
     <th width="25px">ID</th>
     <th>Book Title</th>
@@ -25,7 +24,6 @@
     <th width="50px">Edit</th>
     <th width="50px">Delete</th>
   </tr>
-
   <% @books.each do |book| %>
     <tr class="<%= cycle("odd", "even") %>">
       <td><%= book.id %></td>
@@ -33,32 +31,27 @@
       <td><%= book.rating %></td>
       <td><%= book.note %></td>      
       <td><%= button_to "Edit", edit_book_path(book), :method => :get %></td>
-      <td><%= button_to "Delete", book, :method => :delete, :confirm => "Press OK to Delete book from list." %></td>
+      <td><%= button_to "Delete", book, :method => :delete, :confirm => "Delete book from list." %></td>
     </tr>
   <% end %> 
-
 </table>
-
-  <p>
-
-  <h4>There are <%= @books.count %> books in the library </h4>
-
-  <div id="new_book">
-    <h3>Add new book to library</h3>
-    <%= form_for(@book) do |form| %>
-      <p>
-      <%= form.label :title, "Title" %>
-      <%= form.text_field :title %>
-      </p><p>
-      <%= form.label :rating, "Rating" %>
-      <%= form.text_field :rating %>
-      </p><p>
-      <%= form.label :note, "Author" %>
-      <%= form.text_field :note %>
-      </p>
-      <%= form.submit 'Save' %>
-    <% end %>
-  </div>
-
+<p>
+<h4>There are <%= @books.count %> books in the library </h4>
+<div id="new_book">
+  <h3>Add new book to library</h3>
+  <%= form_for(@book) do |form| %>
+    <p>
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title %>
+    </p><p>
+    <%= form.label :rating, "Rating" %>
+    <%= form.text_field :rating %>
+    </p><p>
+    <%= form.label :note, "Author" %>
+    <%= form.text_field :note %>
+    </p>
+    <%= form.submit 'Save' %>
+  <% end %>
+</div>
 
 

@@ -29,7 +29,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    if @book.update_attributes(params[:book])
+   if @book.update_attributes(params[:book])
       flash[:notice] = "Updated successfully"
     else
       flash[:error] = "Update failed"

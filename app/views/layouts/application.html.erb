@@ -6,7 +6,10 @@
   <%= stylesheet_link_tag "http://yui.yahooapis.com/2.9.0/build/base/base-min.css" %>
   <%= stylesheet_link_tag "public/stylesheets/final_styling.css" %>
   <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag 'public/stylesheets/mobile_styling.css' if mobile_device? %>  
   <%= csrf_meta_tag %>
+  <%= yield(:head) %>  
+
 </head>
 <body>
 

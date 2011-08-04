@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  helper :all  
+  protect_from_forgery  
+
 
   def index
     @book = Book.new
@@ -38,13 +41,19 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book = Book.find(params[:id]) 
+    @book = Book.find(params[:id])
     if @book.destroy
        flash[:notice] = "Book deleted"
-    else   
+    else
       flash[:error] = "Delete error"
     end
     redirect_to books_path
   end
+
+   private
+   def mobile_device?
+     request.user_agent =~ /Mobile|webOS/
+   end
+   helper_method :mobile_device?
 
 end
